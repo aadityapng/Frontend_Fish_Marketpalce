@@ -2,32 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.perks-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Default: satu kolom */
+  gap: 1rem;
+  background-color: #e5e7eb;
+  margin-bottom: auto;
+  margin-top: 10rem;
+  text-align: center;
+  padding: 2rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* Media queries untuk responsif di layar kecil */
+@media screen and (min-width: 640px) {
+  .perks-container {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Dua kolom pada layar dengan lebar minimal 640px */
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Media queries untuk responsif di rentang lebar layar 600px - 1000px */
+@media screen and (min-width: 641px) and (max-width: 1023px) {
+  .perks-container {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* Tiga kolom pada rentang lebar layar 600px - 1000px */
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Media queries untuk responsif di layar besar */
+@media screen and (min-width: 1024px) {
+  .perks-container {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* Tiga kolom pada layar dengan lebar minimal 1024px */
   }
+}
+
+.perks-container .perk {
+  margin-bottom: 1rem;
+}
+
+.perks-container .perk .perk-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  color: #3b82f6;
+}
+
+.perks-container .perk .perk-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.perks-container .perk .perk-description {
+  color: #4b5563;
 }
