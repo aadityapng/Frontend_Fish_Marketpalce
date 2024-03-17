@@ -1,6 +1,6 @@
 !!!!
 ----- link url gamabr yang bisa dimasukan --------
-/guppy.jpg
+/guppy.jpg  dan 
 /guppy2.jpg
 
 !!!!!!!
